@@ -1,0 +1,12 @@
+services:
+  app:
+    env_file:
+      - develop.env
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    image: app:django
+    container_name: prestamo_app
+    command: python manage.py runserver 0.0.0.0:8000
